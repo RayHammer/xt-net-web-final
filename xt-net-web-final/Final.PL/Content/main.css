@@ -1,0 +1,37 @@
+﻿body {
+    color: #333;
+}
+
+header {
+    position: sticky;
+    box-shadow: 0 0 10px rgba(0,0,0,0.4);
+    padding: 10px;
+    height: 60px;
+}
+
+#header-logo {
+    display: inline-block;
+    background: url(Images/header-logo.png) no-repeat;
+    background-size: contain;
+    width: 60px;
+    height: 40px;
+}
+
+#header-content {
+    display: none;
+}
+
+#header-login-menu {
+    width: 15rem;
+}
+
+.color-main {
+    background-color: darkorange;
+    color: white;
+}
+
+@media (min-width: 576px) {
+    #header-content {
+        display: initial;
+    }
+}
