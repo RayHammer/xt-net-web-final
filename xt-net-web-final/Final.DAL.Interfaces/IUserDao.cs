@@ -8,5 +8,7 @@ namespace Final.DAL.Interfaces
         User Add(User user);
 
         IEnumerable<User> GetAll();
+
+        User GetByUsername(string username);
     }
 }

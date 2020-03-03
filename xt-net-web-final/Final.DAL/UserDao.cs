@@ -14,5 +14,10 @@ namespace Final.DAL
         {
             throw new System.NotImplementedException();
         }
+
+        public User GetByUsername(string username)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

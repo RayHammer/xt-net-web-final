@@ -25,5 +25,10 @@ namespace Final.BLL
         {
             return userDao.GetAll();
         }
+
+        public User GetByUsername(string username)
+        {
+            return userDao.GetByUsername(username);
+        }
     }
 }

@@ -11,5 +11,10 @@
         {
             get; set;
         }
+
+        public string PasswordHash
+        {
+            get; set;
+        }
     }
 }
