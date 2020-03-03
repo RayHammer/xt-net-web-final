@@ -18,15 +18,3 @@
     }
 }
 
-<div class="container">
-    <h3>
-        @if (User.Identity.IsAuthenticated)
-        {
-            @:Hello, @User.Identity.Name
-        }
-        else
-        {
-            @:Hello, guest
-        }
-    </h3>
-</div>
