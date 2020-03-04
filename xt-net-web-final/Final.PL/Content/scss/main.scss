@@ -1,39 +1,62 @@
-﻿@import "../bootstrap/bootstrap.scss";
+﻿@import "_colors.scss";
+@import "../bootstrap/bootstrap.scss";
+
+$primary: theme-color("primary");
 
 body {
+    background-color: $gray-100;
     color: #333;
 }
 
-header {
-    position: sticky;
-    box-shadow: 0 0 10px rgba(0,0,0,0.4);
-    padding: 10px;
-    height: 60px;
-}
-
-#header-logo {
-    display: inline-block;
-    background: url(../img/header-logo.png) no-repeat;
-    background-size: contain;
-    width: 60px;
-    height: 40px;
-}
-
-#header-content {
-    display: none;
-}
-
-#header-login-menu {
-    width: 15rem;
-}
-
-.color-main {
-    background-color: darkorange;
+%color-main {
+    background-color: $primary;
     color: white;
 }
 
-@include media-breakpoint-up(sm) {
-    #header-content {
-        display: initial;
+@import "_header.scss";
+
+.forum-group {
+    border: 3px solid $primary;
+    border-radius: 5px;
+    margin: 0.5rem;
+
+    .forum-group-name {
+        @extend %color-main;
+        padding: 0.25rem 0.75rem;
+    }
+
+    ul.forums {
+        display: block;
+        margin: 0;
+        padding: 0;
+
+        > li {
+            display: block;
+            border-bottom: 1px solid $primary;
+            list-style: none;
+            margin: 0;
+            padding: 0.25rem 0.75rem;
+
+            a:hover {
+                text-decoration: none;
+            }
+
+            .forum-name {
+                color: $primary;
+                font-weight: bold;
+            }
+
+            .forum-description {
+                color: $gray-700;
+            }
+        }
+
+        > li:hover {
+            background-color: rgba(128, 128, 128, 0.1);
+        }
+
+        > li:last-child {
+            border-bottom: none;
+        }
     }
 }

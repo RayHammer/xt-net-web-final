@@ -19,7 +19,7 @@
   --white: #fff;
   --gray: #6c757d;
   --gray-dark: #343a40;
-  --primary: #007bff;
+  --primary: #fa7000;
   --secondary: #6c757d;
   --success: #28a745;
   --info: #17a2b8;
@@ -173,14 +173,14 @@ sup {
 
 /* line 186, ../source/repos/xt-net-web-final/xt-net-web-final/Final.PL/Content/bootstrap/_reboot.scss */
 a {
-  color: #007bff;
+  color: #fa7000;
   text-decoration: none;
   background-color: transparent;
 }
 
 /* line 13, ../source/repos/xt-net-web-final/xt-net-web-final/Final.PL/Content/bootstrap/mixins/_hover.scss */
 a:hover {
-  color: #0056b3;
+  color: #ae4e00;
   text-decoration: underline;
 }
 
@@ -1915,7 +1915,7 @@ pre code {
 .table-primary,
 .table-primary > th,
 .table-primary > td {
-  background-color: #b8daff;
+  background-color: #fed7b8;
 }
 
 /* line 14, ../source/repos/xt-net-web-final/xt-net-web-final/Final.PL/Content/bootstrap/mixins/_table-row.scss */
@@ -1923,18 +1923,18 @@ pre code {
 .table-primary td,
 .table-primary thead th,
 .table-primary tbody + tbody {
-  border-color: #7abaff;
+  border-color: #fcb57a;
 }
 
 /* line 13, ../source/repos/xt-net-web-final/xt-net-web-final/Final.PL/Content/bootstrap/mixins/_hover.scss */
 .table-hover .table-primary:hover {
-  background-color: #9fcdff;
+  background-color: #fec99f;
 }
 
 /* line 32, ../source/repos/xt-net-web-final/xt-net-web-final/Final.PL/Content/bootstrap/mixins/_table-row.scss */
 .table-hover .table-primary:hover > td,
 .table-hover .table-primary:hover > th {
-  background-color: #9fcdff;
+  background-color: #fec99f;
 }
 
 /* line 7, ../source/repos/xt-net-web-final/xt-net-web-final/Final.PL/Content/bootstrap/mixins/_table-row.scss */
@@ -2289,9 +2289,9 @@ pre code {
 .form-control:focus {
   color: #495057;
   background-color: #fff;
-  border-color: #80bdff;
+  border-color: #ffb67b;
   outline: 0;
-  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  box-shadow: 0 0 0 0.2rem rgba(250, 112, 0, 0.25);
 }
 
 /* line 43, ../source/repos/xt-net-web-final/xt-net-web-final/Final.PL/Content/bootstrap/_forms.scss */
@@ -2797,7 +2797,7 @@ textarea.form-control {
 /* line 27, ../source/repos/xt-net-web-final/xt-net-web-final/Final.PL/Content/bootstrap/_buttons.scss */
 .btn:focus, .btn.focus {
   outline: 0;
-  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  box-shadow: 0 0 0 0.2rem rgba(250, 112, 0, 0.25);
 }
 
 /* line 34, ../source/repos/xt-net-web-final/xt-net-web-final/Final.PL/Content/bootstrap/_buttons.scss */
@@ -2814,44 +2814,44 @@ fieldset:disabled a.btn {
 /* line 62, ../source/repos/xt-net-web-final/xt-net-web-final/Final.PL/Content/bootstrap/_buttons.scss */
 .btn-primary {
   color: #fff;
-  background-color: #007bff;
-  border-color: #007bff;
+  background-color: #fa7000;
+  border-color: #fa7000;
 }
 
 /* line 13, ../source/repos/xt-net-web-final/xt-net-web-final/Final.PL/Content/bootstrap/mixins/_hover.scss */
 .btn-primary:hover {
   color: #fff;
-  background-color: #0069d9;
-  border-color: #0062cc;
+  background-color: #d45f00;
+  border-color: #c75900;
 }
 
 /* line 18, ../source/repos/xt-net-web-final/xt-net-web-final/Final.PL/Content/bootstrap/mixins/_buttons.scss */
 .btn-primary:focus, .btn-primary.focus {
   color: #fff;
-  background-color: #0069d9;
-  border-color: #0062cc;
-  box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.5);
+  background-color: #d45f00;
+  border-color: #c75900;
+  box-shadow: 0 0 0 0.2rem rgba(251, 133, 38, 0.5);
 }
 
 /* line 32, ../source/repos/xt-net-web-final/xt-net-web-final/Final.PL/Content/bootstrap/mixins/_buttons.scss */
 .btn-primary.disabled, .btn-primary:disabled {
   color: #fff;
-  background-color: #007bff;
-  border-color: #007bff;
+  background-color: #fa7000;
+  border-color: #fa7000;
 }
 
 /* line 43, ../source/repos/xt-net-web-final/xt-net-web-final/Final.PL/Content/bootstrap/mixins/_buttons.scss */
 .btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active,
 .show > .btn-primary.dropdown-toggle {
   color: #fff;
-  background-color: #0062cc;
-  border-color: #005cbf;
+  background-color: #c75900;
+  border-color: #ba5300;
 }
 
 /* line 53, ../source/repos/xt-net-web-final/xt-net-web-final/Final.PL/Content/bootstrap/mixins/_buttons.scss */
 .btn-primary:not(:disabled):not(.disabled):active:focus, .btn-primary:not(:disabled):not(.disabled).active:focus,
 .show > .btn-primary.dropdown-toggle:focus {
-  box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.5);
+  box-shadow: 0 0 0 0.2rem rgba(251, 133, 38, 0.5);
 }
 
 /* line 62, ../source/repos/xt-net-web-final/xt-net-web-final/Final.PL/Content/bootstrap/_buttons.scss */
@@ -3157,25 +3157,25 @@ fieldset:disabled a.btn {
 
 /* line 68, ../source/repos/xt-net-web-final/xt-net-web-final/Final.PL/Content/bootstrap/_buttons.scss */
 .btn-outline-primary {
-  color: #007bff;
-  border-color: #007bff;
+  color: #fa7000;
+  border-color: #fa7000;
 }
 
 /* line 13, ../source/repos/xt-net-web-final/xt-net-web-final/Final.PL/Content/bootstrap/mixins/_hover.scss */
 .btn-outline-primary:hover {
   color: #fff;
-  background-color: #007bff;
-  border-color: #007bff;
+  background-color: #fa7000;
+  border-color: #fa7000;
 }
 
 /* line 74, ../source/repos/xt-net-web-final/xt-net-web-final/Final.PL/Content/bootstrap/mixins/_buttons.scss */
 .btn-outline-primary:focus, .btn-outline-primary.focus {
-  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
+  box-shadow: 0 0 0 0.2rem rgba(250, 112, 0, 0.5);
 }
 
 /* line 79, ../source/repos/xt-net-web-final/xt-net-web-final/Final.PL/Content/bootstrap/mixins/_buttons.scss */
 .btn-outline-primary.disabled, .btn-outline-primary:disabled {
-  color: #007bff;
+  color: #fa7000;
   background-color: transparent;
 }
 
@@ -3183,14 +3183,14 @@ fieldset:disabled a.btn {
 .btn-outline-primary:not(:disabled):not(.disabled):active, .btn-outline-primary:not(:disabled):not(.disabled).active,
 .show > .btn-outline-primary.dropdown-toggle {
   color: #fff;
-  background-color: #007bff;
-  border-color: #007bff;
+  background-color: #fa7000;
+  border-color: #fa7000;
 }
 
 /* line 92, ../source/repos/xt-net-web-final/xt-net-web-final/Final.PL/Content/bootstrap/mixins/_buttons.scss */
 .btn-outline-primary:not(:disabled):not(.disabled):active:focus, .btn-outline-primary:not(:disabled):not(.disabled).active:focus,
 .show > .btn-outline-primary.dropdown-toggle:focus {
-  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
+  box-shadow: 0 0 0 0.2rem rgba(250, 112, 0, 0.5);
 }
 
 /* line 68, ../source/repos/xt-net-web-final/xt-net-web-final/Final.PL/Content/bootstrap/_buttons.scss */
@@ -3462,13 +3462,13 @@ fieldset:disabled a.btn {
 /* line 79, ../source/repos/xt-net-web-final/xt-net-web-final/Final.PL/Content/bootstrap/_buttons.scss */
 .btn-link {
   font-weight: 400;
-  color: #007bff;
+  color: #fa7000;
   text-decoration: none;
 }
 
 /* line 13, ../source/repos/xt-net-web-final/xt-net-web-final/Final.PL/Content/bootstrap/mixins/_hover.scss */
 .btn-link:hover {
-  color: #0056b3;
+  color: #ae4e00;
   text-decoration: underline;
 }
 
@@ -3808,7 +3808,7 @@ input[type="button"].btn-block {
 .dropdown-item.active, .dropdown-item:active {
   color: #fff;
   text-decoration: none;
-  background-color: #007bff;
+  background-color: #fa7000;
 }
 
 /* line 160, ../source/repos/xt-net-web-final/xt-net-web-final/Final.PL/Content/bootstrap/_dropdown.scss */
@@ -4218,25 +4218,25 @@ input[type="button"].btn-block {
 /* line 30, ../source/repos/xt-net-web-final/xt-net-web-final/Final.PL/Content/bootstrap/_custom-forms.scss */
 .custom-control-input:checked ~ .custom-control-label::before {
   color: #fff;
-  border-color: #007bff;
-  background-color: #007bff;
+  border-color: #fa7000;
+  background-color: #fa7000;
 }
 
 /* line 37, ../source/repos/xt-net-web-final/xt-net-web-final/Final.PL/Content/bootstrap/_custom-forms.scss */
 .custom-control-input:focus ~ .custom-control-label::before {
-  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  box-shadow: 0 0 0 0.2rem rgba(250, 112, 0, 0.25);
 }
 
 /* line 46, ../source/repos/xt-net-web-final/xt-net-web-final/Final.PL/Content/bootstrap/_custom-forms.scss */
 .custom-control-input:focus:not(:checked) ~ .custom-control-label::before {
-  border-color: #80bdff;
+  border-color: #ffb67b;
 }
 
 /* line 50, ../source/repos/xt-net-web-final/xt-net-web-final/Final.PL/Content/bootstrap/_custom-forms.scss */
 .custom-control-input:not(:disabled):active ~ .custom-control-label::before {
   color: #fff;
-  background-color: #b3d7ff;
-  border-color: #b3d7ff;
+  background-color: #ffd2ae;
+  border-color: #ffd2ae;
 }
 
 /* line 60, ../source/repos/xt-net-web-final/xt-net-web-final/Final.PL/Content/bootstrap/_custom-forms.scss */
@@ -4294,8 +4294,8 @@ input[type="button"].btn-block {
 
 /* line 126, ../source/repos/xt-net-web-final/xt-net-web-final/Final.PL/Content/bootstrap/_custom-forms.scss */
 .custom-checkbox .custom-control-input:indeterminate ~ .custom-control-label::before {
-  border-color: #007bff;
-  background-color: #007bff;
+  border-color: #fa7000;
+  background-color: #fa7000;
 }
 
 /* line 131, ../source/repos/xt-net-web-final/xt-net-web-final/Final.PL/Content/bootstrap/_custom-forms.scss */
@@ -4305,12 +4305,12 @@ input[type="button"].btn-block {
 
 /* line 137, ../source/repos/xt-net-web-final/xt-net-web-final/Final.PL/Content/bootstrap/_custom-forms.scss */
 .custom-checkbox .custom-control-input:disabled:checked ~ .custom-control-label::before {
-  background-color: rgba(0, 123, 255, 0.5);
+  background-color: rgba(250, 112, 0, 0.5);
 }
 
 /* line 140, ../source/repos/xt-net-web-final/xt-net-web-final/Final.PL/Content/bootstrap/_custom-forms.scss */
 .custom-checkbox .custom-control-input:disabled:indeterminate ~ .custom-control-label::before {
-  background-color: rgba(0, 123, 255, 0.5);
+  background-color: rgba(250, 112, 0, 0.5);
 }
 
 /* line 151, ../source/repos/xt-net-web-final/xt-net-web-final/Final.PL/Content/bootstrap/_custom-forms.scss */
@@ -4325,7 +4325,7 @@ input[type="button"].btn-block {
 
 /* line 163, ../source/repos/xt-net-web-final/xt-net-web-final/Final.PL/Content/bootstrap/_custom-forms.scss */
 .custom-radio .custom-control-input:disabled:checked ~ .custom-control-label::before {
-  background-color: rgba(0, 123, 255, 0.5);
+  background-color: rgba(250, 112, 0, 0.5);
 }
 
 /* line 174, ../source/repos/xt-net-web-final/xt-net-web-final/Final.PL/Content/bootstrap/_custom-forms.scss */
@@ -4367,7 +4367,7 @@ input[type="button"].btn-block {
 
 /* line 206, ../source/repos/xt-net-web-final/xt-net-web-final/Final.PL/Content/bootstrap/_custom-forms.scss */
 .custom-switch .custom-control-input:disabled:checked ~ .custom-control-label::before {
-  background-color: rgba(0, 123, 255, 0.5);
+  background-color: rgba(250, 112, 0, 0.5);
 }
 
 /* line 219, ../source/repos/xt-net-web-final/xt-net-web-final/Final.PL/Content/bootstrap/_custom-forms.scss */
@@ -4389,9 +4389,9 @@ input[type="button"].btn-block {
 
 /* line 236, ../source/repos/xt-net-web-final/xt-net-web-final/Final.PL/Content/bootstrap/_custom-forms.scss */
 .custom-select:focus {
-  border-color: #80bdff;
+  border-color: #ffb67b;
   outline: 0;
-  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  box-shadow: 0 0 0 0.2rem rgba(250, 112, 0, 0.25);
 }
 
 /* line 245, ../source/repos/xt-net-web-final/xt-net-web-final/Final.PL/Content/bootstrap/_custom-forms.scss */
@@ -4463,8 +4463,8 @@ input[type="button"].btn-block {
 
 /* line 317, ../source/repos/xt-net-web-final/xt-net-web-final/Final.PL/Content/bootstrap/_custom-forms.scss */
 .custom-file-input:focus ~ .custom-file-label {
-  border-color: #80bdff;
-  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  border-color: #ffb67b;
+  box-shadow: 0 0 0 0.2rem rgba(250, 112, 0, 0.25);
 }
 
 /* line 323, ../source/repos/xt-net-web-final/xt-net-web-final/Final.PL/Content/bootstrap/_custom-forms.scss */
@@ -4534,17 +4534,17 @@ input[type="button"].btn-block {
 
 /* line 392, ../source/repos/xt-net-web-final/xt-net-web-final/Final.PL/Content/bootstrap/_custom-forms.scss */
 .custom-range:focus::-webkit-slider-thumb {
-  box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(250, 112, 0, 0.25);
 }
 
 /* line 393, ../source/repos/xt-net-web-final/xt-net-web-final/Final.PL/Content/bootstrap/_custom-forms.scss */
 .custom-range:focus::-moz-range-thumb {
-  box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(250, 112, 0, 0.25);
 }
 
 /* line 394, ../source/repos/xt-net-web-final/xt-net-web-final/Final.PL/Content/bootstrap/_custom-forms.scss */
 .custom-range:focus::-ms-thumb {
-  box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(250, 112, 0, 0.25);
 }
 
 /* line 397, ../source/repos/xt-net-web-final/xt-net-web-final/Final.PL/Content/bootstrap/_custom-forms.scss */
@@ -4557,7 +4557,7 @@ input[type="button"].btn-block {
   width: 1rem;
   height: 1rem;
   margin-top: -0.25rem;
-  background-color: #007bff;
+  background-color: #fa7000;
   border: 0;
   border-radius: 1rem;
   transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
@@ -4573,7 +4573,7 @@ input[type="button"].btn-block {
 
 /* line 412, ../source/repos/xt-net-web-final/xt-net-web-final/Final.PL/Content/bootstrap/_custom-forms.scss */
 .custom-range::-webkit-slider-thumb:active {
-  background-color: #b3d7ff;
+  background-color: #ffd2ae;
 }
 
 /* line 417, ../source/repos/xt-net-web-final/xt-net-web-final/Final.PL/Content/bootstrap/_custom-forms.scss */
@@ -4591,7 +4591,7 @@ input[type="button"].btn-block {
 .custom-range::-moz-range-thumb {
   width: 1rem;
   height: 1rem;
-  background-color: #007bff;
+  background-color: #fa7000;
   border: 0;
   border-radius: 1rem;
   transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
@@ -4607,7 +4607,7 @@ input[type="button"].btn-block {
 
 /* line 438, ../source/repos/xt-net-web-final/xt-net-web-final/Final.PL/Content/bootstrap/_custom-forms.scss */
 .custom-range::-moz-range-thumb:active {
-  background-color: #b3d7ff;
+  background-color: #ffd2ae;
 }
 
 /* line 443, ../source/repos/xt-net-web-final/xt-net-web-final/Final.PL/Content/bootstrap/_custom-forms.scss */
@@ -4628,7 +4628,7 @@ input[type="button"].btn-block {
   margin-top: 0;
   margin-right: 0.2rem;
   margin-left: 0.2rem;
-  background-color: #007bff;
+  background-color: #fa7000;
   border: 0;
   border-radius: 1rem;
   transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
@@ -4644,7 +4644,7 @@ input[type="button"].btn-block {
 
 /* line 467, ../source/repos/xt-net-web-final/xt-net-web-final/Final.PL/Content/bootstrap/_custom-forms.scss */
 .custom-range::-ms-thumb:active {
-  background-color: #b3d7ff;
+  background-color: #ffd2ae;
 }
 
 /* line 472, ../source/repos/xt-net-web-final/xt-net-web-final/Final.PL/Content/bootstrap/_custom-forms.scss */
@@ -4792,7 +4792,7 @@ input[type="button"].btn-block {
 .nav-pills .nav-link.active,
 .nav-pills .show > .nav-link {
   color: #fff;
-  background-color: #007bff;
+  background-color: #fa7000;
 }
 
 /* line 94, ../source/repos/xt-net-web-final/xt-net-web-final/Final.PL/Content/bootstrap/_nav.scss */
@@ -5567,7 +5567,7 @@ input[type="button"].btn-block {
   padding: 0.5rem 0.75rem;
   margin-left: -1px;
   line-height: 1.25;
-  color: #007bff;
+  color: #fa7000;
   background-color: #fff;
   border: 1px solid #dee2e6;
 }
@@ -5575,7 +5575,7 @@ input[type="button"].btn-block {
 /* line 17, ../source/repos/xt-net-web-final/xt-net-web-final/Final.PL/Content/bootstrap/_pagination.scss */
 .page-link:hover {
   z-index: 2;
-  color: #0056b3;
+  color: #ae4e00;
   text-decoration: none;
   background-color: #e9ecef;
   border-color: #dee2e6;
@@ -5585,7 +5585,7 @@ input[type="button"].btn-block {
 .page-link:focus {
   z-index: 3;
   outline: 0;
-  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  box-shadow: 0 0 0 0.2rem rgba(250, 112, 0, 0.25);
 }
 
 /* line 34, ../source/repos/xt-net-web-final/xt-net-web-final/Final.PL/Content/bootstrap/_pagination.scss */
@@ -5605,8 +5605,8 @@ input[type="button"].btn-block {
 .page-item.active .page-link {
   z-index: 3;
   color: #fff;
-  background-color: #007bff;
-  border-color: #007bff;
+  background-color: #fa7000;
+  border-color: #fa7000;
 }
 
 /* line 52, ../source/repos/xt-net-web-final/xt-net-web-final/Final.PL/Content/bootstrap/_pagination.scss */
@@ -5703,19 +5703,19 @@ a.badge:hover, a.badge:focus {
 /* line 51, ../source/repos/xt-net-web-final/xt-net-web-final/Final.PL/Content/bootstrap/_badge.scss */
 .badge-primary {
   color: #fff;
-  background-color: #007bff;
+  background-color: #fa7000;
 }
 
 /* line 17, ../source/repos/xt-net-web-final/xt-net-web-final/Final.PL/Content/bootstrap/mixins/_hover.scss */
 a.badge-primary:hover, a.badge-primary:focus {
   color: #fff;
-  background-color: #0062cc;
+  background-color: #c75900;
 }
 
 /* line 11, ../source/repos/xt-net-web-final/xt-net-web-final/Final.PL/Content/bootstrap/mixins/_badge.scss */
 a.badge-primary:focus, a.badge-primary.focus {
   outline: 0;
-  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
+  box-shadow: 0 0 0 0.2rem rgba(250, 112, 0, 0.5);
 }
 
 /* line 51, ../source/repos/xt-net-web-final/xt-net-web-final/Final.PL/Content/bootstrap/_badge.scss */
@@ -5901,19 +5901,19 @@ a.badge-dark:focus, a.badge-dark.focus {
 
 /* line 48, ../source/repos/xt-net-web-final/xt-net-web-final/Final.PL/Content/bootstrap/_alert.scss */
 .alert-primary {
-  color: #004085;
-  background-color: #cce5ff;
-  border-color: #b8daff;
+  color: #823a00;
+  background-color: #fee2cc;
+  border-color: #fed7b8;
 }
 
 /* line 6, ../source/repos/xt-net-web-final/xt-net-web-final/Final.PL/Content/bootstrap/mixins/_alert.scss */
 .alert-primary hr {
-  border-top-color: #9fcdff;
+  border-top-color: #fec99f;
 }
 
 /* line 10, ../source/repos/xt-net-web-final/xt-net-web-final/Final.PL/Content/bootstrap/mixins/_alert.scss */
 .alert-primary .alert-link {
-  color: #002752;
+  color: #4f2300;
 }
 
 /* line 48, ../source/repos/xt-net-web-final/xt-net-web-final/Final.PL/Content/bootstrap/_alert.scss */
@@ -6063,7 +6063,7 @@ a.badge-dark:focus, a.badge-dark.focus {
   color: #fff;
   text-align: center;
   white-space: nowrap;
-  background-color: #007bff;
+  background-color: #fa7000;
   transition: width 0.6s ease;
 }
 
@@ -6164,8 +6164,8 @@ a.badge-dark:focus, a.badge-dark.focus {
 .list-group-item.active {
   z-index: 2;
   color: #fff;
-  background-color: #007bff;
-  border-color: #007bff;
+  background-color: #fa7000;
+  border-color: #fa7000;
 }
 
 /* line 75, ../source/repos/xt-net-web-final/xt-net-web-final/Final.PL/Content/bootstrap/_list-group.scss */
@@ -6356,21 +6356,21 @@ a.badge-dark:focus, a.badge-dark.focus {
 
 /* line 4, ../source/repos/xt-net-web-final/xt-net-web-final/Final.PL/Content/bootstrap/mixins/_list-group.scss */
 .list-group-item-primary {
-  color: #004085;
-  background-color: #b8daff;
+  color: #823a00;
+  background-color: #fed7b8;
 }
 
 /* line 17, ../source/repos/xt-net-web-final/xt-net-web-final/Final.PL/Content/bootstrap/mixins/_hover.scss */
 .list-group-item-primary.list-group-item-action:hover, .list-group-item-primary.list-group-item-action:focus {
-  color: #004085;
-  background-color: #9fcdff;
+  color: #823a00;
+  background-color: #fec99f;
 }
 
 /* line 14, ../source/repos/xt-net-web-final/xt-net-web-final/Final.PL/Content/bootstrap/mixins/_list-group.scss */
 .list-group-item-primary.list-group-item-action.active {
   color: #fff;
-  background-color: #004085;
-  border-color: #004085;
+  background-color: #823a00;
+  border-color: #823a00;
 }
 
 /* line 4, ../source/repos/xt-net-web-final/xt-net-web-final/Final.PL/Content/bootstrap/mixins/_list-group.scss */
@@ -7445,14 +7445,14 @@ a.close.disabled {
 
 /* line 6, ../source/repos/xt-net-web-final/xt-net-web-final/Final.PL/Content/bootstrap/mixins/_background-variant.scss */
 .bg-primary {
-  background-color: #007bff !important;
+  background-color: #fa7000 !important;
 }
 
 /* line 17, ../source/repos/xt-net-web-final/xt-net-web-final/Final.PL/Content/bootstrap/mixins/_hover.scss */
 a.bg-primary:hover, a.bg-primary:focus,
 button.bg-primary:hover,
 button.bg-primary:focus {
-  background-color: #0062cc !important;
+  background-color: #c75900 !important;
 }
 
 /* line 6, ../source/repos/xt-net-web-final/xt-net-web-final/Final.PL/Content/bootstrap/mixins/_background-variant.scss */
@@ -7601,7 +7601,7 @@ button.bg-dark:focus {
 
 /* line 20, ../source/repos/xt-net-web-final/xt-net-web-final/Final.PL/Content/bootstrap/utilities/_borders.scss */
 .border-primary {
-  border-color: #007bff !important;
+  border-color: #fa7000 !important;
 }
 
 /* line 20, ../source/repos/xt-net-web-final/xt-net-web-final/Final.PL/Content/bootstrap/utilities/_borders.scss */
@@ -11410,12 +11410,12 @@ button.bg-dark:focus {
 
 /* line 6, ../source/repos/xt-net-web-final/xt-net-web-final/Final.PL/Content/bootstrap/mixins/_text-emphasis.scss */
 .text-primary {
-  color: #007bff !important;
+  color: #fa7000 !important;
 }
 
 /* line 17, ../source/repos/xt-net-web-final/xt-net-web-final/Final.PL/Content/bootstrap/mixins/_hover.scss */
 a.text-primary:hover, a.text-primary:focus {
-  color: #0056b3 !important;
+  color: #ae4e00 !important;
 }
 
 /* line 6, ../source/repos/xt-net-web-final/xt-net-web-final/Final.PL/Content/bootstrap/mixins/_text-emphasis.scss */
@@ -11641,12 +11641,19 @@ a.text-dark:hover, a.text-dark:focus {
   }
 }
 
-/* line 3, ../source/repos/xt-net-web-final/xt-net-web-final/Final.PL/Content/scss/main.scss */
+/* line 6, ../source/repos/xt-net-web-final/xt-net-web-final/Final.PL/Content/scss/main.scss */
 body {
+  background-color: #f8f9fa;
   color: #333;
 }
 
-/* line 7, ../source/repos/xt-net-web-final/xt-net-web-final/Final.PL/Content/scss/main.scss */
+/* line 11, ../source/repos/xt-net-web-final/xt-net-web-final/Final.PL/Content/scss/main.scss */
+header, .forum-group .forum-group-name {
+  background-color: #fa7000;
+  color: white;
+}
+
+/* line 5, ../source/repos/xt-net-web-final/xt-net-web-final/Final.PL/Content/scss/_header.scss */
 header {
   position: sticky;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
@@ -11654,8 +11661,8 @@ header {
   height: 60px;
 }
 
-/* line 14, ../source/repos/xt-net-web-final/xt-net-web-final/Final.PL/Content/scss/main.scss */
-#header-logo {
+/* line 12, ../source/repos/xt-net-web-final/xt-net-web-final/Final.PL/Content/scss/_header.scss */
+header #header-logo {
   display: inline-block;
   background: url(../img/header-logo.png) no-repeat;
   background-size: contain;
@@ -11663,27 +11670,75 @@ header {
   height: 40px;
 }
 
-/* line 22, ../source/repos/xt-net-web-final/xt-net-web-final/Final.PL/Content/scss/main.scss */
-#header-content {
+/* line 20, ../source/repos/xt-net-web-final/xt-net-web-final/Final.PL/Content/scss/_header.scss */
+header #header-content {
   display: none;
 }
 
-/* line 26, ../source/repos/xt-net-web-final/xt-net-web-final/Final.PL/Content/scss/main.scss */
-#header-login-menu {
+/* line 24, ../source/repos/xt-net-web-final/xt-net-web-final/Final.PL/Content/scss/_header.scss */
+header #header-login-menu {
   width: 15rem;
 }
 
-/* line 30, ../source/repos/xt-net-web-final/xt-net-web-final/Final.PL/Content/scss/main.scss */
-.color-main {
-  background-color: darkorange;
-  color: white;
-}
-
 @media (min-width: 576px) {
-  /* line 36, ../source/repos/xt-net-web-final/xt-net-web-final/Final.PL/Content/scss/main.scss */
-  #header-content {
+  /* line 31, ../source/repos/xt-net-web-final/xt-net-web-final/Final.PL/Content/scss/_header.scss */
+  header #header-content {
     display: initial;
   }
+}
+
+/* line 18, ../source/repos/xt-net-web-final/xt-net-web-final/Final.PL/Content/scss/main.scss */
+.forum-group {
+  border: 3px solid #fa7000;
+  border-radius: 5px;
+  margin: 0.5rem;
+}
+
+/* line 23, ../source/repos/xt-net-web-final/xt-net-web-final/Final.PL/Content/scss/main.scss */
+.forum-group .forum-group-name {
+  padding: 0.25rem 0.75rem;
+}
+
+/* line 28, ../source/repos/xt-net-web-final/xt-net-web-final/Final.PL/Content/scss/main.scss */
+.forum-group ul.forums {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 33, ../source/repos/xt-net-web-final/xt-net-web-final/Final.PL/Content/scss/main.scss */
+.forum-group ul.forums > li {
+  display: block;
+  border-bottom: 1px solid #fa7000;
+  list-style: none;
+  margin: 0;
+  padding: 0.25rem 0.75rem;
+}
+
+/* line 40, ../source/repos/xt-net-web-final/xt-net-web-final/Final.PL/Content/scss/main.scss */
+.forum-group ul.forums > li a:hover {
+  text-decoration: none;
+}
+
+/* line 44, ../source/repos/xt-net-web-final/xt-net-web-final/Final.PL/Content/scss/main.scss */
+.forum-group ul.forums > li .forum-name {
+  color: #fa7000;
+  font-weight: bold;
+}
+
+/* line 49, ../source/repos/xt-net-web-final/xt-net-web-final/Final.PL/Content/scss/main.scss */
+.forum-group ul.forums > li .forum-description {
+  color: #495057;
+}
+
+/* line 54, ../source/repos/xt-net-web-final/xt-net-web-final/Final.PL/Content/scss/main.scss */
+.forum-group ul.forums > li:hover {
+  background-color: rgba(128, 128, 128, 0.1);
+}
+
+/* line 58, ../source/repos/xt-net-web-final/xt-net-web-final/Final.PL/Content/scss/main.scss */
+.forum-group ul.forums > li:last-child {
+  border-bottom: none;
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -8,8 +8,10 @@
 </head>
 <body>
     @RenderPage("~/Pages/Shared/_Header.cshtml")
-    <div id="content" class="container mt-3">
-        @RenderBody()
+    <div class="container-fluid">
+        <div id="content" class="container mt-3">
+            @RenderBody()
+        </div>
     </div>
     <script src="~/Scripts/jquery-3.4.1.min.js"></script>
     <script src="~/Scripts/umd/popper.min.js"></script>

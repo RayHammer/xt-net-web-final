@@ -1,0 +1,35 @@
+﻿@import "../bootstrap/_functions.scss";
+@import "../bootstrap/_variables.scss";
+@import "../bootstrap/_mixins.scss";
+
+header {
+    position: sticky;
+    @extend %color-main;
+    box-shadow: 0 0 10px rgba(0,0,0,0.4);
+    padding: 10px;
+    height: 60px;
+
+    #header-logo {
+        display: inline-block;
+        background: url(../img/header-logo.png) no-repeat;
+        background-size: contain;
+        width: 60px;
+        height: 40px;
+    }
+
+    #header-content {
+        display: none;
+    }
+
+    #header-login-menu {
+        width: 15rem;
+    }
+}
+
+@include media-breakpoint-up(sm) {
+    header {
+        #header-content {
+            display: initial;
+        }
+    }
+}
