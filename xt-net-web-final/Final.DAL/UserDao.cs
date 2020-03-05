@@ -1,23 +1,108 @@
 ﻿using Final.Entities;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 
 namespace Final.DAL
 {
     public class UserDao : Interfaces.IUserDao
     {
+        private static string ConnectionString => DaoCommon.ConnectionString;
+
         public User Add(User user)
         {
-            throw new System.NotImplementedException();
+            using (var connection = new SqlConnection(ConnectionString))
+            {
+                using (SqlCommand command = connection.CreateCommand())
+                {
+                    command.CommandType = CommandType.Text;
+                    command.CommandText = "INSERT INTO Users (Username, PasswordHash) VALUES (@Username, @PasswordHash); SET @Id = SCOPE_IDENTITY();";
+                    command.Parameters.Add(new SqlParameter("Username", user.Username));
+                    command.Parameters.Add(new SqlParameter("PasswordHash", user.PasswordHash));
+                    command.Parameters.Add(new SqlParameter()
+                    {
+                        ParameterName = "Id",
+                        DbType = DbType.Int32,
+                        Direction = ParameterDirection.Output
+                    });
+
+                    connection.Open();
+
+                    using (var reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            user.Id = (int)command.Parameters["Id"].Value;
+                        }
+                    }
+
+                    connection.Close();
+                }
+            }
+            return user;
         }
 
         public IEnumerable<User> GetAll()
         {
-            throw new System.NotImplementedException();
+            var users = new List<User>();
+            using (var connection = new SqlConnection(ConnectionString))
+            {
+                using (SqlCommand command = connection.CreateCommand())
+                {
+                    command.CommandType = CommandType.Text;
+                    command.CommandText = "SELECT * FROM [dbo].[Users]";
+
+                    connection.Open();
+
+                    using (var reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            users.Add(new User()
+                            {
+                                Id = (int)reader["Id"],
+                                Username = reader["Username"] as string,
+                                PasswordHash = reader["PasswordHash"] as string
+                            });
+                        }
+                    }
+
+                    connection.Close();
+                }
+            }
+            return users;
         }
 
         public User GetByUsername(string username)
         {
-            throw new System.NotImplementedException();
+            User user = null;
+            using (var connection = new SqlConnection(ConnectionString))
+            {
+                using (SqlCommand command = connection.CreateCommand())
+                {
+                    command.CommandType = CommandType.Text;
+                    command.CommandText = "SELECT * FROM [dbo].[Users] WHERE [Username] = @Username";
+                    command.Parameters.Add(new SqlParameter("Username", username));
+
+                    connection.Open();
+
+                    using (var reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            user = new User()
+                            {
+                                Id = (int)reader["Id"],
+                                Username = reader["Username"] as string,
+                                PasswordHash = reader["PasswordHash"] as string
+                            };
+                        }
+                    }
+
+                    connection.Close();
+                }
+            }
+            return user;
         }
     }
 }
