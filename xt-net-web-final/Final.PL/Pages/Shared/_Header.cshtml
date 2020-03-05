@@ -1,4 +1,4 @@
-﻿<header class="container-fluid">
+﻿<header class="container-fluid color-main">
     <div class="container-md">
         <div id="header-nav" class="row">
             <div class="col col-sm-auto">
@@ -27,7 +27,7 @@
                                     <label for="header-password-field">
                                         Password
                                     </label>
-                                    <input type="text" name="password" placeholder="********" class="form-control" id="header-password-field" />
+                                    <input type="password" name="password" placeholder="********" class="form-control" id="header-password-field" />
                                 </div>
                                 <button type="submit" class="btn btn-primary">Login</button>
                             </form>
@@ -40,7 +40,9 @@
                 }
                 else
                 {
-                    <a href="~/Pages/Login?logout=true"></a>
+                    <a href="~/Pages/Login?logout=true" class="btn btn-primary">
+                        Logout
+                    </a>
                 }
             </div>
         </div>
