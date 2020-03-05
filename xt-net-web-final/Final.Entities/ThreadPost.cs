@@ -1,18 +1,23 @@
 ﻿namespace Final.Entities
 {
-    public class User
+    public class ThreadPost
     {
         public int Id
         {
             get; set;
         }
 
-        public string Username
+        public int ThreadId
         {
             get; set;
         }
 
-        public string PasswordHash
+        public int? AuthorId
+        {
+            get; set;
+        }
+
+        public string Message
         {
             get; set;
         }
