@@ -1,0 +1,28 @@
+﻿@using Final.Entities;
+@using Final.PL.Models;
+@{
+    Page.Title = "Thread";
+    Layout = "~/Layouts/_MainLayout.cshtml";
+
+    ForumThread thread = null;
+
+    string idString = UrlData[0];
+
+    if (!IsPost && !IsAjax && Request["id"] != idString &&
+        int.TryParse(idString, out var id))
+    {
+        thread = AppData.ForumThreadLogic.GetById(id);
+        Page.Title = "Thread :: " + thread.Title;
+    }
+    else
+    {
+        Response.Redirect("~/");
+    }
+}
+
+<h3>
+    @thread.Title
+</h3>
+<div>
+    @thread.Message
+</div>

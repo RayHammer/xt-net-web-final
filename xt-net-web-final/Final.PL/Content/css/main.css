@@ -11691,22 +11691,21 @@ header #header-login-menu {
 .forum-group {
   border: 3px solid #fa7000;
   border-radius: 5px;
-  margin: 0.25rem;
 }
 
-/* line 23, ../source/repos/xt-net-web-final/xt-net-web-final/Final.PL/Content/scss/main.scss */
+/* line 22, ../source/repos/xt-net-web-final/xt-net-web-final/Final.PL/Content/scss/main.scss */
 .forum-group .forum-group-name {
   padding: 0.25rem 0.75rem;
 }
 
-/* line 28, ../source/repos/xt-net-web-final/xt-net-web-final/Final.PL/Content/scss/main.scss */
+/* line 27, ../source/repos/xt-net-web-final/xt-net-web-final/Final.PL/Content/scss/main.scss */
 .forum-group ul.forums {
   display: block;
   margin: 0;
   padding: 0;
 }
 
-/* line 33, ../source/repos/xt-net-web-final/xt-net-web-final/Final.PL/Content/scss/main.scss */
+/* line 32, ../source/repos/xt-net-web-final/xt-net-web-final/Final.PL/Content/scss/main.scss */
 .forum-group ul.forums > li {
   display: block;
   border-bottom: 1px solid #fa7000;
@@ -11715,28 +11714,28 @@ header #header-login-menu {
   padding: 0.25rem 0.75rem;
 }
 
-/* line 40, ../source/repos/xt-net-web-final/xt-net-web-final/Final.PL/Content/scss/main.scss */
+/* line 39, ../source/repos/xt-net-web-final/xt-net-web-final/Final.PL/Content/scss/main.scss */
 .forum-group ul.forums > li a:hover {
   text-decoration: none;
 }
 
-/* line 44, ../source/repos/xt-net-web-final/xt-net-web-final/Final.PL/Content/scss/main.scss */
+/* line 43, ../source/repos/xt-net-web-final/xt-net-web-final/Final.PL/Content/scss/main.scss */
 .forum-group ul.forums > li .forum-name {
   color: #fa7000;
   font-weight: bold;
 }
 
-/* line 49, ../source/repos/xt-net-web-final/xt-net-web-final/Final.PL/Content/scss/main.scss */
+/* line 48, ../source/repos/xt-net-web-final/xt-net-web-final/Final.PL/Content/scss/main.scss */
 .forum-group ul.forums > li .forum-description {
   color: #495057;
 }
 
-/* line 54, ../source/repos/xt-net-web-final/xt-net-web-final/Final.PL/Content/scss/main.scss */
+/* line 53, ../source/repos/xt-net-web-final/xt-net-web-final/Final.PL/Content/scss/main.scss */
 .forum-group ul.forums > li:hover {
   background-color: rgba(128, 128, 128, 0.1);
 }
 
-/* line 58, ../source/repos/xt-net-web-final/xt-net-web-final/Final.PL/Content/scss/main.scss */
+/* line 57, ../source/repos/xt-net-web-final/xt-net-web-final/Final.PL/Content/scss/main.scss */
 .forum-group ul.forums > li:last-child {
   border-bottom: none;
 }

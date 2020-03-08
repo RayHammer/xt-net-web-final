@@ -1,21 +1,27 @@
-﻿@using System.Security.Cryptography;
-@using System.Text;
+﻿@using Final.PL.Models;
 @{
     Page.Title = "Index";
     Layout = "~/Layouts/_MainLayout.cshtml";
+}
 
-    string input = "password";
-    string hash;
-    using (var md5 = MD5.Create())
-    {
-        byte[] data = md5.ComputeHash(Encoding.UTF8.GetBytes(input));
-        var sBuilder = new StringBuilder();
-        for (var i = 0; i < data.Length; i++)
-        {
-            sBuilder.Append(data[i].ToString("x2"));
-        }
-        hash = sBuilder.ToString();
-    }
+@if (User.Identity.IsAuthenticated)
+{
+    <p>
+        <a class="btn btn-primary" role="button" data-toggle="collapse" href="#new-thread-form" aria-expanded="false" aria-controls="new-thread-form">
+            Create new thread
+        </a>
+    </p>
+    <form action="~/Pages/NewThread" method="post" class="collapse" id="new-thread-form">
+        <div class="form-group">
+            <input type="text" required class="form-control form-control-lg" name="title" placeholder="Title" />
+        </div>
+        <div class="form-group">
+            <textarea required class="form-control" name="message" placeholder="Text"></textarea>
+        </div>
+        <div class="form-group">
+            <input type="submit" class="btn btn-primary" value="Create" />
+        </div>
+    </form>
 }
 
 <div class="forum-group">
@@ -23,23 +29,21 @@
         Main categories
     </div>
     <ul class="forums">
-        <li>
-            <a href="#">
-                <div class="forum-name">Forum name</div>
-                <div class="forum-description">Description goes here</div>
-            </a>
-        </li>
-        <li>
-            <a href="#">
-                <div class="forum-name">Forum name</div>
-                <div class="forum-description">Description goes here</div>
-            </a>
-        </li>
-        <li>
-            <a href="#">
-                <div class="forum-name">Forum name</div>
-                <div class="forum-description">Description goes here</div>
-            </a>
-        </li>
+        @foreach (var thread in AppData.ForumThreadLogic.GetAll())
+        {
+            <li>
+                <a href="~/Pages/Thread/@thread.Id">
+                    <div class="forum-name">@thread.Title</div>
+                    @{
+                        string authorName = "Anonymous";
+                        if (thread.AuthorId.HasValue)
+                        {
+                            authorName = AppData.UserLogic.GetById(thread.AuthorId.Value).Username;
+                        }
+                    }
+                    <div class="forum-description">By @authorName</div>
+                </a>
+            </li>
+        }
     </ul>
 </div>
