@@ -1,9 +1,9 @@
 ﻿using Final.Entities;
 using System.Collections.Generic;
 
-namespace Final.DAL.Interfaces
+namespace Final.BLL.Interfaces
 {
-    public interface IForumThreadDao
+    public interface IForumThreadLogic
     {
         ForumThread Add(ForumThread thread);
 
