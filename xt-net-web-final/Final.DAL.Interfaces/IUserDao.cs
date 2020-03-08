@@ -7,8 +7,14 @@ namespace Final.DAL.Interfaces
     {
         User Add(User user);
 
+        bool Delete(int id);
+
         IEnumerable<User> GetAll();
 
+        User GetById(int id);
+
         User GetByUsername(string username);
+
+        User Update(int id, User user);
     }
 }

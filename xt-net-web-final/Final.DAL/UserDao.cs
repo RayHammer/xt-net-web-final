@@ -42,6 +42,11 @@ namespace Final.DAL
             return user;
         }
 
+        public bool Delete(int id)
+        {
+            throw new System.NotImplementedException();
+        }
+
         public IEnumerable<User> GetAll()
         {
             var users = new List<User>();
@@ -71,6 +76,38 @@ namespace Final.DAL
                 }
             }
             return users;
+        }
+
+        public User GetById(int id)
+        {
+            User user = null;
+            using (var connection = new SqlConnection(ConnectionString))
+            {
+                using (SqlCommand command = connection.CreateCommand())
+                {
+                    command.CommandType = CommandType.Text;
+                    command.CommandText = "SELECT * FROM [dbo].[Users] WHERE [Id] = @Id";
+                    command.Parameters.Add(new SqlParameter("Id", id));
+
+                    connection.Open();
+
+                    using (var reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            user = new User()
+                            {
+                                Id = (int)reader["Id"],
+                                Username = reader["Username"] as string,
+                                PasswordHash = reader["PasswordHash"] as string
+                            };
+                        }
+                    }
+
+                    connection.Close();
+                }
+            }
+            return user;
         }
 
         public User GetByUsername(string username)
@@ -103,6 +140,11 @@ namespace Final.DAL
                 }
             }
             return user;
+        }
+
+        public User Update(int id, User user)
+        {
+            throw new System.NotImplementedException();
         }
     }
 }
