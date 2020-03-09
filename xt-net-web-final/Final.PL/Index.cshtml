@@ -10,6 +10,12 @@
         <a class="btn btn-primary" role="button" data-toggle="collapse" href="#new-thread-form" aria-expanded="false" aria-controls="new-thread-form">
             Create new thread
         </a>
+        @if (User.IsInRole("Admin"))
+        {
+            <a class="btn btn-primary" href="~/Pages/AdminPanel">
+                Admin panel
+            </a>
+        }
     </p>
     <form action="~/Pages/NewThread" method="post" class="collapse" id="new-thread-form">
         <div class="form-group">

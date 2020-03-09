@@ -1,0 +1,24 @@
+﻿@using Final.PL.Models;
+@{
+    Page.Title = "Admin panel";
+    Layout = "~/Layouts/_MainLayout.cshtml";
+
+    if (!User.IsInRole("Admin"))
+    {
+        Response.StatusCode = 403;
+        return;
+    }
+}
+
+<div class="post-group">
+    @foreach (var user in AppData.UserLogic.GetAll())
+    {
+        <div class="post">
+            @user.Username
+            @if (Roles.IsUserInRole(user.Username, "Admin"))
+            {
+                <span class="badge badge-secondary">!</span>
+            }
+        </div>
+    }
+</div>
