@@ -84,7 +84,8 @@ namespace Final.BLL
             var usernameRegex = new Regex(@"[A-Za-z0-9_\-]*");
             return user.Username.Length > 0 && user.Username.Length <= 16 &&
                 usernameRegex.Match(user.Username).Value == user.Username &&
-                password.Length >= 8 && password.Length <= 32;
+                password.Length >= 8 && password.Length <= 32 &&
+                usernameRegex.Match(password).Value == password;
         }
 
         private static string CreateHash(MD5 md5, string input)
