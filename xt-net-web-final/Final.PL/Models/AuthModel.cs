@@ -1,4 +1,5 @@
-﻿using Final.BLL.Interfaces;
+﻿using Final.BLL;
+using Final.BLL.Interfaces;
 using Final.Entities;
 
 namespace Final.PL.Models
@@ -18,6 +19,15 @@ namespace Final.PL.Models
                 Username = username
             };
             return userLogic.Add(user, password) != null;
+        }
+
+        public static bool Validate(string username, string password)
+        {
+            User user = new User()
+            {
+                Username = username
+            };
+            return UserLogic.Validate(user, password);
         }
     }
 }

@@ -3,6 +3,8 @@
     Page.Title = "Sign Up";
     Layout = "~/Layouts/_MainLayout.cshtml";
 
+    var errorMessage = new List<string>();
+
     if (IsPost)
     {
         string username = Request["username"];
@@ -14,23 +16,49 @@
         {
             FormsAuthentication.SetAuthCookie(username,
                 createPersistentCookie: true);
-            Response.Redirect("~");
+            Response.Redirect("~/");
+            return;
         }
         else
         {
+            if (password != password2)
+            {
+                errorMessage.Add("Passwords don't match");
+            }
+            if (!AuthModel.Validate(username, password))
+            {
+                errorMessage.Add("Invalid username or password");
+            }
         }
     }
 }
 
 <h3>Sign Up</h3>
+@if (errorMessage.Count > 0)
+{
+    <div class="alert alert-danger">
+        <span class="sr-only">Error: Couldn't sign up</span>
+        <ul class="mb-0">
+            @foreach (string msg in errorMessage)
+            {
+                <li>
+                    @msg
+                </li>
+            }
+        </ul>
+    </div>
+}
 <form action="~/Pages/SignUp" method="post">
     <div class="form-group">
+        <label>Username</label>
         <input type="text" name="username" placeholder="Username" class="form-control" />
     </div>
     <div class="form-group">
+        <label>Password</label>
         <input type="password" name="password" placeholder="********" class="form-control" />
     </div>
     <div class="form-group">
+        <label>Repeat password</label>
         <input type="password" name="password2" placeholder="********" class="form-control" />
     </div>
     <div class="form-group">

@@ -3,6 +3,7 @@ using Final.Entities;
 using System.Collections.Generic;
 using System.Security.Cryptography;
 using System.Text;
+using System.Text.RegularExpressions;
 
 namespace Final.BLL
 {
@@ -75,7 +76,9 @@ namespace Final.BLL
 
         public static bool Validate(User user, string password)
         {
+            var usernameRegex = new Regex(@"[A-Za-z0-9_\-]*");
             return user.Username.Length > 0 && user.Username.Length <= 16 &&
+                usernameRegex.Match(user.Username).Value == user.Username &&
                 password.Length >= 8 && password.Length <= 32;
         }
 

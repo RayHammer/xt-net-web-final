@@ -3,6 +3,8 @@
     Page.Title = "Login";
     Layout = "~/Layouts/_MainLayout.cshtml";
 
+    bool loginError = false;
+
     if (IsPost)
     {
         string username = Request["username"];
@@ -12,10 +14,12 @@
         {
             FormsAuthentication.SetAuthCookie(username,
                 createPersistentCookie: true);
-            Response.Redirect("~");
+            Response.Redirect("~/");
+            return;
         }
         else
         {
+            loginError = true;
         }
     }
     else
@@ -23,14 +27,22 @@
         if (Convert.ToBoolean(Request["logout"]))
         {
             FormsAuthentication.SignOut();
-            Response.Redirect("~");
+            Response.Redirect("~/");
+            return;
         }
     }
 }
 
 <h3>Login</h3>
+@if (loginError)
+{
+    <div class="alert alert-danger" role="alert">
+        <span class="sr-only">Error: </span>
+        Couldn't match provided login and password
+    </div>
+}
 <form action="~/Pages/Login" method="post">
-    <input type="text" name="username" placeholder="Username" class="form-control mb-3" />
-    <input type="password" name="password" placeholder="********" class="form-control mb-3" />
+    <input type="text" required name="username" placeholder="Username" class="form-control mb-3" />
+    <input type="password" required name="password" placeholder="********" class="form-control mb-3" />
     <input type="submit" value="Login" class="btn btn-primary" />
 </form>
