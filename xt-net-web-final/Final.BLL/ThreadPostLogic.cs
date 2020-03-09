@@ -13,6 +13,11 @@ namespace Final.BLL
             this.dao = dao;
         }
 
+        public static bool Validate(ThreadPost post)
+        {
+            return post.Message.Length > 0 && post.Message.Length <= 4000;
+        }
+
         public ThreadPost Add(ThreadPost post)
         {
             if (!Validate(post))
@@ -27,6 +32,11 @@ namespace Final.BLL
             return dao.Delete(id);
         }
 
+        public int DeleteUserReference(int userId)
+        {
+            return dao.DeleteUserReference(userId);
+        }
+
         public IEnumerable<ThreadPost> GetAllFor(int threadId)
         {
             return dao.GetAllFor(threadId);
@@ -39,11 +49,6 @@ namespace Final.BLL
                 return null;
             }
             return dao.Update(id, post);
-        }
-
-        public static bool Validate(ThreadPost post)
-        {
-            return post.Message.Length > 0 && post.Message.Length <= 4000;
         }
     }
 }

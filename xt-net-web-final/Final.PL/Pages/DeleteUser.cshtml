@@ -8,11 +8,15 @@
 
     if (IsPost)
     {
-        if (int.TryParse(Request["id"], out var id) &&
-            AppData.UserLogic.Delete(id))
+        if (int.TryParse(Request["id"], out var id))
         {
-            Response.Redirect("~/Pages/AdminPage");
-            return;
+            AppData.ForumThreadLogic.DeleteUserReference(id);
+            AppData.ThreadPostLogic.DeleteUserReference(id);
+            if (AppData.UserLogic.Delete(id))
+            {
+                Response.Redirect("~/Pages/AdminPage");
+                return;
+            }
         }
     }
 

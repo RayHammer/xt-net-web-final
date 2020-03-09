@@ -13,6 +13,10 @@
             GetById(thread.AuthorId.GetValueOrDefault(-1));
         if (User.Identity.Name == author?.Username || User.IsInRole("Admin"))
         {
+            foreach (var post in AppData.ThreadPostLogic.GetAllFor(threadId))
+            {
+                AppData.ThreadPostLogic.Delete(post.Id);
+            }
             AppData.ForumThreadLogic.Delete(threadId);
             Response.Redirect("~/");
             return;

@@ -62,6 +62,27 @@ namespace Final.DAL
             return rows > 0;
         }
 
+        public int DeleteUserReference(int userId)
+        {
+            int rows = 0;
+            using (var connection = new SqlConnection(ConnectionString))
+            {
+                using (SqlCommand command = connection.CreateCommand())
+                {
+                    command.CommandType = CommandType.Text;
+                    command.CommandText = "UPDATE [dbo].[ThreadPosts] SET AuthorId = NULL WHERE AuthorId = @UserId";
+                    command.Parameters.Add(new SqlParameter("UserId", userId));
+
+                    connection.Open();
+
+                    rows = command.ExecuteNonQuery();
+
+                    connection.Close();
+                }
+            }
+            return rows;
+        }
+
         public IEnumerable<ThreadPost> GetAllFor(int threadId)
         {
             var posts = new List<ThreadPost>();
@@ -83,7 +104,7 @@ namespace Final.DAL
                             {
                                 Id = (int)reader["Id"],
                                 ThreadId = (int)reader["ThreadId"],
-                                AuthorId = (int)reader["AuthorId"],
+                                AuthorId = reader["AuthorId"] as int?,
                                 Message = reader["Message"] as string
                             });
                         }

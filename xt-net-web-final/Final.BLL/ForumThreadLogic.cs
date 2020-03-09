@@ -1,10 +1,7 @@
-﻿using Final.Entities;
+﻿using Final.DAL.Interfaces;
+using Final.Entities;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Final.DAL.Interfaces;
 
 namespace Final.BLL
 {
@@ -15,6 +12,12 @@ namespace Final.BLL
         public ForumThreadLogic(IForumThreadDao dao)
         {
             this.dao = dao;
+        }
+
+        public static bool Validate(ForumThread thread)
+        {
+            return thread.Title.Length > 0 && thread.Title.Length <= 50 &&
+                thread.Message.Length > 0 && thread.Message.Length <= 4000;
         }
 
         public ForumThread Add(ForumThread thread)
@@ -29,6 +32,11 @@ namespace Final.BLL
         public bool Delete(int id)
         {
             return dao.Delete(id);
+        }
+
+        public int DeleteUserReference(int userId)
+        {
+            return dao.DeleteUserReference(userId);
         }
 
         public IEnumerable<ForumThread> GetAll()
@@ -48,12 +56,6 @@ namespace Final.BLL
                 return null;
             }
             return dao.Update(id, thread);
-        }
-
-        public static bool Validate(ForumThread thread)
-        {
-            return thread.Title.Length > 0 && thread.Title.Length <= 50 &&
-                thread.Message.Length > 0 && thread.Message.Length <= 4000;
         }
     }
 }

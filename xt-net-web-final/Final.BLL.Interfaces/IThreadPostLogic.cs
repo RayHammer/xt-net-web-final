@@ -9,6 +9,8 @@ namespace Final.BLL.Interfaces
 
         bool Delete(int id);
 
+        int DeleteUserReference(int userId);
+
         IEnumerable<ThreadPost> GetAllFor(int threadId);
 
         ThreadPost Update(int id, ThreadPost post);

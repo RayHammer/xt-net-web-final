@@ -3,9 +3,9 @@
     Page.Title = "Admin panel";
     Layout = "~/Layouts/_MainLayout.cshtml";
 
-    if (!User.IsInRole("Admin"))
+    if (!User.Identity.IsAuthenticated || !User.IsInRole("Admin"))
     {
-        Response.StatusCode = 403;
+        Response.StatusCode = (int)HttpStatusCode.Unauthorized;
         return;
     }
 }
@@ -33,5 +33,5 @@
             }
         }
     </select>
-    <input type="submit" disabled class="btn btn-primary" name="action" value="Delete" />
+    <input type="submit" class="btn btn-primary" name="action" value="Delete" />
 </form>
