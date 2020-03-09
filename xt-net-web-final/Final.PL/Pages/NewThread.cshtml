@@ -5,7 +5,7 @@
     {
         if (!User.Identity.IsAuthenticated)
         {
-            Response.Redirect("~/");
+            Response.StatusCode = 404;
             return;
         }
 
@@ -19,13 +19,11 @@
 
         if (thread != null)
         {
-            Response.Redirect("~/");
+            Response.Redirect("~/Pages/Thread/" + thread.Id.ToString());
             return;
         }
     }
-    else
-    {
-        Response.Redirect("~/");
-        return;
-    }
+
+    Response.Redirect("~/");
+    return;
 }

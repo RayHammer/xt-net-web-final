@@ -42,8 +42,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IForumThreadDao.cs" />
+    <Compile Include="IRoleDao.cs" />
     <Compile Include="IThreadPostDao.cs" />
     <Compile Include="IUserDao.cs" />
+    <Compile Include="IUserRolesDao.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

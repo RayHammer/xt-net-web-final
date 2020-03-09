@@ -13,12 +13,8 @@ namespace Final.PL.Models
                 ConnectionStrings["sqlDatabase"].ConnectionString;
             UserLogic = new UserLogic(new UserDao());
             ForumThreadLogic = new ForumThreadLogic(new ForumThreadDao());
+            RoleLogic = new RoleLogic(new RoleDao(), new UserRolesDao());
             ThreadPostLogic = new ThreadPostLogic(new ThreadPostDao());
-        }
-
-        public static IUserLogic UserLogic
-        {
-            get; private set;
         }
 
         public static IForumThreadLogic ForumThreadLogic
@@ -26,7 +22,17 @@ namespace Final.PL.Models
             get; private set;
         }
 
+        public static IRoleLogic RoleLogic
+        {
+            get; private set;
+        }
+
         public static IThreadPostLogic ThreadPostLogic
+        {
+            get; private set;
+        }
+
+        public static IUserLogic UserLogic
         {
             get; private set;
         }

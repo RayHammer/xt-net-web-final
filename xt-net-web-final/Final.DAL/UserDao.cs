@@ -28,12 +28,9 @@ namespace Final.DAL
 
                     connection.Open();
 
-                    using (var reader = command.ExecuteReader())
+                    if (command.ExecuteNonQuery() > 0)
                     {
-                        if (reader.Read())
-                        {
-                            user.Id = (int)command.Parameters["Id"].Value;
-                        }
+                        user.Id = (int)command.Parameters["Id"].Value;
                     }
 
                     connection.Close();

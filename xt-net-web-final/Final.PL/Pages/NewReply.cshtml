@@ -9,7 +9,7 @@
             return;
         }
 
-        var thread = AppData.ThreadPostLogic.Add(new ThreadPost()
+        var post = AppData.ThreadPostLogic.Add(new ThreadPost()
         {
             AuthorId = AppData.UserLogic.
                 GetByUsername(User.Identity.Name).Id,
@@ -17,15 +17,13 @@
             Message = Request["message"]
         });
 
-        if (thread != null)
+        if (post != null)
         {
-            Response.Redirect("~/");
+            Response.Redirect("~/Pages/Thread/" + post.ThreadId.ToString());
             return;
         }
     }
-    else
-    {
-        Response.Redirect("~/");
-        return;
-    }
+
+    Response.Redirect("~/");
+    return;
 }

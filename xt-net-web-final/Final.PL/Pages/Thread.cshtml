@@ -1,5 +1,6 @@
 ﻿@using Final.Entities;
 @using Final.PL.Models;
+@using System.Text.RegularExpressions;
 @{
     Page.Title = "Thread";
     Layout = "~/Layouts/_MainLayout.cshtml";
@@ -8,18 +9,31 @@
 
     string idString = UrlData[0];
     int id = -1;
+    User author = null;
 
     if (!IsPost && !IsAjax && Request["id"] != idString &&
         int.TryParse(idString, out id))
     {
         thread = AppData.ForumThreadLogic.GetById(id);
+        author = AppData.UserLogic.
+            GetById(thread.AuthorId.GetValueOrDefault(-1));
         Page.Title = "Thread :: " + thread.Title;
+
+        
     }
     else
     {
         Response.Redirect("~/");
         return;
     }
+}
+
+@if (User.Identity.Name == author?.Username || User.IsInRole("Admin"))
+{
+    <form action="~/Pages/DeleteThread" method="post" class="form-group">
+        <input type="hidden" name="id" value="@thread.Id" />
+        <input type="submit" value="Delete thread" class="btn btn-primary" />
+    </form>
 }
 
 <div class="thread-main">
@@ -39,10 +53,11 @@
             New reply
         </button>
     </p>
-    <form class="collapse" id="new-reply-form">
+
+    <form action="~/Pages/NewReply" method="post" class="collapse" id="new-reply-form">
         <input type="hidden" name="threadId" value="@id" />
         <div class="form-group">
-            <textarea placeholder="Your reply here" class="form-control"></textarea>
+            <textarea name="message" placeholder="Your reply here" class="form-control"></textarea>
         </div>
         <div class="form-group">
             <input type="submit" class="btn btn-primary" value="Send" />

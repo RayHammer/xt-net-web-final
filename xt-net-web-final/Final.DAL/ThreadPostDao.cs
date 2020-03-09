@@ -1,5 +1,4 @@
 ﻿using Final.Entities;
-using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -31,12 +30,9 @@ namespace Final.DAL
 
                     connection.Open();
 
-                    using (var reader = command.ExecuteReader())
+                    if (command.ExecuteNonQuery() > 0)
                     {
-                        if (reader.Read())
-                        {
-                            post.Id = (int)command.Parameters["Id"].Value;
-                        }
+                        post.Id = (int)command.Parameters["Id"].Value;
                     }
 
                     connection.Close();

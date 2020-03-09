@@ -1,18 +1,31 @@
-﻿using System;
+﻿using Final.BLL.Interfaces;
+using System;
+using System.Collections.Generic;
 using System.Web.Security;
 
 namespace Final.PL.Models
 {
     public class AppRoleProvider : RoleProvider
     {
+        private static IRoleLogic RoleLogic => AppData.RoleLogic;
+        private static IUserLogic UserLogic => AppData.UserLogic;
+
         public override bool IsUserInRole(string username, string roleName)
         {
-            throw new NotImplementedException();
+            int userId = UserLogic.GetByUsername(username).Id;
+            int roleId = RoleLogic.GetByName(roleName).Id;
+            return RoleLogic.IsUserInRole(userId, roleId);
         }
 
         public override string[] GetRolesForUser(string username)
         {
-            throw new NotImplementedException();
+            var roleNames = new List<string>();
+            int userId = UserLogic.GetByUsername(username).Id;
+            foreach (var role in RoleLogic.GetRolesForUser(userId))
+            {
+                roleNames.Add(role.Name);
+            }
+            return roleNames.ToArray();
         }
 
         #region NOT_IMPLEMENTED

@@ -1,5 +1,4 @@
-﻿using Final.BLL.Interfaces;
-using Final.DAL.Interfaces;
+﻿using Final.DAL.Interfaces;
 using Final.Entities;
 using System.Collections.Generic;
 using System.Security.Cryptography;
@@ -7,7 +6,7 @@ using System.Text;
 
 namespace Final.BLL
 {
-    public class UserLogic : IUserLogic
+    public class UserLogic : Interfaces.IUserLogic
     {
         private readonly IUserDao dao;
 

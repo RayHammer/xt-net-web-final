@@ -30,12 +30,9 @@ namespace Final.DAL
 
                     connection.Open();
 
-                    using (var reader = command.ExecuteReader())
+                    if (command.ExecuteNonQuery() > 0)
                     {
-                        if (reader.Read())
-                        {
-                            thread.Id = (int)command.Parameters["Id"].Value;
-                        }
+                        thread.Id = (int)command.Parameters["Id"].Value;
                     }
 
                     connection.Close();
@@ -52,7 +49,7 @@ namespace Final.DAL
                 using (SqlCommand command = connection.CreateCommand())
                 {
                     command.CommandType = CommandType.Text;
-                    command.CommandText = "DELETE FROM [dbo].[ForumThreads] WHERE Id = @IId";
+                    command.CommandText = "DELETE FROM [dbo].[ForumThreads] WHERE Id = @Id";
                     command.Parameters.Add(new SqlParameter("Id", id));
 
                     connection.Open();
