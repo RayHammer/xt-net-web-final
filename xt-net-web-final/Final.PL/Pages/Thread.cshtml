@@ -57,7 +57,7 @@
     <form action="~/Pages/NewReply" method="post" class="collapse" id="new-reply-form">
         <input type="hidden" name="threadId" value="@id" />
         <div class="form-group">
-            <textarea name="message" placeholder="Your reply here" class="form-control"></textarea>
+            <textarea name="message" required placeholder="Your reply here" class="form-control"></textarea>
         </div>
         <div class="form-group">
             <input type="submit" class="btn btn-primary" value="Send" />
