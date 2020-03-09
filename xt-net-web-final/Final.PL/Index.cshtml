@@ -35,11 +35,7 @@
                 <a href="~/Pages/Thread/@thread.Id">
                     <div class="forum-name">@thread.Title</div>
                     @{
-                        string authorName = "Anonymous";
-                        if (thread.AuthorId.HasValue)
-                        {
-                            authorName = AppData.UserLogic.GetById(thread.AuthorId.Value).Username;
-                        }
+                        string authorName = AppData.GetContentAuthorName(thread.AuthorId);
                     }
                     <div class="forum-description">By @authorName</div>
                 </a>

@@ -19,6 +19,10 @@ namespace Final.BLL
 
         public ForumThread Add(ForumThread thread)
         {
+            if (!Validate(thread))
+            {
+                return null;
+            }
             return dao.Add(thread);
         }
 
@@ -39,7 +43,17 @@ namespace Final.BLL
 
         public ForumThread Update(int id, ForumThread thread)
         {
+            if (!Validate(thread))
+            {
+                return null;
+            }
             return dao.Update(id, thread);
+        }
+
+        public static bool Validate(ForumThread thread)
+        {
+            return thread.Title.Length > 0 && thread.Title.Length <= 50 &&
+                thread.Message.Length > 0 && thread.Message.Length <= 4000;
         }
     }
 }

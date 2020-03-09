@@ -18,7 +18,7 @@ namespace Final.BLL
 
         public User Add(User user, string password)
         {
-            if (GetByUsername(user.Username) != null)
+            if (!Validate(user, password) && GetByUsername(user.Username) != null)
             {
                 return null;
             }
@@ -59,6 +59,25 @@ namespace Final.BLL
         public User GetByUsername(string username)
         {
             return dao.GetByUsername(username);
+        }
+
+        public User Update(int id, User user, string password)
+        {
+            if (!Validate(user, password))
+            {
+                return null;
+            }
+            using (var md5 = MD5.Create())
+            {
+                user.PasswordHash = CreateHash(md5, password);
+            }
+            return dao.Update(id, user);
+        }
+
+        public static bool Validate(User user, string password)
+        {
+            return user.Username.Length > 0 && user.Username.Length <= 16 &&
+                password.Length >= 8 && password.Length <= 32;
         }
 
         private static string CreateHash(MD5 md5, string input)

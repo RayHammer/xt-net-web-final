@@ -1,8 +1,39 @@
-﻿@{
+﻿@using Final.PL.Models;
+@{
     Page.Title = "Sign Up";
     Layout = "~/Layouts/_MainLayout.cshtml";
+
+    if (IsPost)
+    {
+        string username = Request["username"];
+        string password = Request["password"];
+        string password2 = Request["password2"];
+
+        if (password == password2 &&
+            AuthModel.Register(username, password))
+        {
+            FormsAuthentication.SetAuthCookie(username,
+                createPersistentCookie: true);
+            Response.Redirect("~");
+        }
+        else
+        {
+        }
+    }
 }
 
-<div>
-
-</div>
+<h3>Sign Up</h3>
+<form action="~/Pages/SignUp" method="post">
+    <div class="form-group">
+        <input type="text" name="username" placeholder="Username" class="form-control" />
+    </div>
+    <div class="form-group">
+        <input type="password" name="password" placeholder="********" class="form-control" />
+    </div>
+    <div class="form-group">
+        <input type="password" name="password2" placeholder="********" class="form-control" />
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Sign Up" class="btn btn-primary" />
+    </div>
+</form>

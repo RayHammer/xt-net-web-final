@@ -12,9 +12,11 @@
         {
             FormsAuthentication.SetAuthCookie(username,
                 createPersistentCookie: true);
+            Response.Redirect("~");
         }
-
-        Response.Redirect("~");
+        else
+        {
+        }
     }
     else
     {

@@ -42,7 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IForumThreadDao.cs" />
-    <Compile Include="IThreadPost.cs" />
+    <Compile Include="IThreadPostDao.cs" />
     <Compile Include="IUserDao.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -16,7 +16,7 @@ namespace Final.DAL
                 using (SqlCommand command = connection.CreateCommand())
                 {
                     command.CommandType = CommandType.Text;
-                    command.CommandText = "INSERT INTO Users (Username, PasswordHash) VALUES (@Username, @PasswordHash); SET @Id = SCOPE_IDENTITY();";
+                    command.CommandText = "INSERT INTO [dbo].[Users] (Username, PasswordHash) VALUES (@Username, @PasswordHash); SET @Id = SCOPE_IDENTITY();";
                     command.Parameters.Add(new SqlParameter("Username", user.Username));
                     command.Parameters.Add(new SqlParameter("PasswordHash", user.PasswordHash));
                     command.Parameters.Add(new SqlParameter()
@@ -44,7 +44,23 @@ namespace Final.DAL
 
         public bool Delete(int id)
         {
-            throw new System.NotImplementedException();
+            int rows = 0;
+            using (var connection = new SqlConnection(ConnectionString))
+            {
+                using (SqlCommand command = connection.CreateCommand())
+                {
+                    command.CommandType = CommandType.Text;
+                    command.CommandText = "DELETE FROM [dbo].[Users] WHERE Id = @IId";
+                    command.Parameters.Add(new SqlParameter("Id", id));
+
+                    connection.Open();
+
+                    rows = command.ExecuteNonQuery();
+
+                    connection.Close();
+                }
+            }
+            return rows > 0;
         }
 
         public IEnumerable<User> GetAll()
@@ -144,7 +160,28 @@ namespace Final.DAL
 
         public User Update(int id, User user)
         {
-            throw new System.NotImplementedException();
+            using (var connection = new SqlConnection(ConnectionString))
+            {
+                using (SqlCommand command = connection.CreateCommand())
+                {
+                    command.CommandType = CommandType.Text;
+                    command.CommandText = "UPDATE [dbo].[Users] (Username, PasswordHash) SET Username = @Username, " +
+                        "PasswordHash = @PasswordHash WHERE Id = @Id;";
+                    command.Parameters.Add(new SqlParameter("Username", user.Username));
+                    command.Parameters.Add(new SqlParameter("PasswordHash", user.PasswordHash));
+                    command.Parameters.Add(new SqlParameter("Id", id));
+
+                    connection.Open();
+
+                    if (command.ExecuteNonQuery() > 0)
+                    {
+                        user.Id = id;
+                    }
+
+                    connection.Close();
+                }
+            }
+            return user;
         }
     }
 }

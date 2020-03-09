@@ -7,9 +7,10 @@
     ForumThread thread = null;
 
     string idString = UrlData[0];
+    int id = -1;
 
     if (!IsPost && !IsAjax && Request["id"] != idString &&
-        int.TryParse(idString, out var id))
+        int.TryParse(idString, out id))
     {
         thread = AppData.ForumThreadLogic.GetById(id);
         Page.Title = "Thread :: " + thread.Title;
@@ -17,12 +18,47 @@
     else
     {
         Response.Redirect("~/");
+        return;
     }
 }
 
-<h3>
-    @thread.Title
-</h3>
-<div>
-    @thread.Message
+<div class="thread-main">
+    <h3>
+        @thread.Title
+    </h3>
+    <div>
+        @thread.Message
+    </div>
+</div>
+
+@if (User.Identity.IsAuthenticated)
+{
+    <p>
+        <button type="button" name="message" class="btn btn-primary" data-toggle="collapse" data-target="#new-reply-form"
+                aria-expanded="false" aria-controls="new-reply-form">
+            New reply
+        </button>
+    </p>
+    <form class="collapse" id="new-reply-form">
+        <input type="hidden" name="threadId" value="@id" />
+        <div class="form-group">
+            <textarea placeholder="Your reply here" class="form-control"></textarea>
+        </div>
+        <div class="form-group">
+            <input type="submit" class="btn btn-primary" value="Send" />
+        </div>
+    </form>
+}
+
+<div class="post-group">
+    @foreach (var post in AppData.ThreadPostLogic.GetAllFor(thread.Id))
+    {
+        <div class="post">
+            @{
+                string authorName = AppData.GetContentAuthorName(post.AuthorId);
+            }
+            <strong>@authorName</strong> said:<br />
+            @post.Message
+        </div>
+    }
 </div>

@@ -9,11 +9,11 @@
             return;
         }
 
-        var thread = AppData.ForumThreadLogic.Add(new ForumThread()
+        var thread = AppData.ThreadPostLogic.Add(new ThreadPost()
         {
             AuthorId = AppData.UserLogic.
                 GetByUsername(User.Identity.Name).Id,
-            Title = Request["title"],
+            ThreadId = int.Parse(Request["threadId"]),
             Message = Request["message"]
         });
 

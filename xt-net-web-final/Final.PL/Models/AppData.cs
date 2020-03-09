@@ -13,6 +13,7 @@ namespace Final.PL.Models
                 ConnectionStrings["sqlDatabase"].ConnectionString;
             UserLogic = new UserLogic(new UserDao());
             ForumThreadLogic = new ForumThreadLogic(new ForumThreadDao());
+            ThreadPostLogic = new ThreadPostLogic(new ThreadPostDao());
         }
 
         public static IUserLogic UserLogic
@@ -23,6 +24,25 @@ namespace Final.PL.Models
         public static IForumThreadLogic ForumThreadLogic
         {
             get; private set;
+        }
+
+        public static IThreadPostLogic ThreadPostLogic
+        {
+            get; private set;
+        }
+
+        public static string GetContentAuthorName(int? id)
+        {
+            string authorName = "Anonymous";
+            if (id.HasValue)
+            {
+                var user = UserLogic.GetById(id.Value);
+                if (user != null)
+                {
+                    authorName = UserLogic.GetById(id.Value).Username;
+                }
+            }
+            return authorName;
         }
     }
 }

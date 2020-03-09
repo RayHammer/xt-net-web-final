@@ -87,6 +87,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\css\bootstrap.css" />
     <Content Include="Content\img\header-logo.png" />
     <Content Include="Content\css\main.css" />
     <Content Include="Global.asax" />
@@ -205,6 +206,8 @@
     <Content Include="Content\scss\_colors.scss" />
     <Content Include="Pages\NewThread.cshtml" />
     <Content Include="Pages\Thread.cshtml" />
+    <Content Include="Content\scss\bootstrap.scss" />
+    <Content Include="Pages\NewReply.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
