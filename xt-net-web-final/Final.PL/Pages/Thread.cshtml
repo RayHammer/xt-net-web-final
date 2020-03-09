@@ -19,7 +19,7 @@
             GetById(thread.AuthorId.GetValueOrDefault(-1));
         Page.Title = "Thread :: " + thread.Title;
 
-        
+
     }
     else
     {
@@ -31,8 +31,24 @@
 @if (User.Identity.Name == author?.Username || User.IsInRole("Admin"))
 {
     <form action="~/Pages/DeleteThread" method="post" class="form-group">
+        <button type="button" class="btn btn-light" data-toggle="collapse" data-target="#edit-thread-form"
+                aria-expanded="false" aria-controls="edit-thread-form">Edit thread</button>
         <input type="hidden" name="id" value="@thread.Id" />
         <input type="submit" value="Delete thread" class="btn btn-primary" />
+    </form>
+
+    <form action="~/Pages/EditThread" method="post" class="collapse" id="edit-thread-form">
+        <input type="hidden" name="id" value="@thread.Id" />
+        <div class="form-group">
+            <input type="text" required class="form-control form-control-lg"
+                   name="title" placeholder="Title" value="@thread.Title" />
+        </div>
+        <div class="form-group">
+            <textarea required class="form-control" name="message" placeholder="Text">@thread.Message</textarea>
+        </div>
+        <div class="form-group">
+            <input type="submit" class="btn btn-primary" name="action" value="Edit" />
+        </div>
     </form>
 }
 

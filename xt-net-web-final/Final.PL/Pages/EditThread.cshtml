@@ -1,0 +1,29 @@
+﻿@using Final.Entities;
+@using Final.PL.Models;
+@{
+    if (IsPost)
+    {
+        if (!User.Identity.IsAuthenticated)
+        {
+            Response.StatusCode = 404;
+            return;
+        }
+
+        var thread = AppData.ForumThreadLogic.Update(int.Parse(Request["id"]), new ForumThread()
+        {
+            AuthorId = AppData.UserLogic.
+                GetByUsername(User.Identity.Name).Id,
+            Title = Request["title"],
+            Message = Request["message"]
+        });
+
+        if (thread != null)
+        {
+            Response.Redirect("~/Pages/Thread/" + thread.Id.ToString());
+            return;
+        }
+    }
+
+    Response.Redirect("~/");
+    return;
+}
