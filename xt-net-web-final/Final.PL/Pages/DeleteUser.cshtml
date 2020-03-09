@@ -1,0 +1,21 @@
+﻿@using Final.PL.Models;
+@{
+    if (!User.IsInRole("Admin"))
+    {
+        Response.StatusCode = 403;
+        return;
+    }
+
+    if (IsPost)
+    {
+        if (int.TryParse(Request["id"], out var id) &&
+            AppData.UserLogic.Delete(id))
+        {
+            Response.Redirect("~/Pages/AdminPage");
+            return;
+        }
+    }
+
+    Response.StatusCode = 403;
+    return;
+}

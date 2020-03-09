@@ -16,5 +16,7 @@ namespace Final.BLL.Interfaces
         User GetByUsername(string username);
 
         User Update(int id, User user, string password);
+
+        bool Delete(int id);
     }
 }

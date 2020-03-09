@@ -10,7 +10,7 @@
     }
 }
 
-<div class="post-group">
+<div class="post-group mb-3">
     @foreach (var user in AppData.UserLogic.GetAll())
     {
         <div class="post">
@@ -22,3 +22,16 @@
         </div>
     }
 </div>
+
+<form action="~/Pages/DeleteUser" method="post">
+    <select name="id" class="form-group form-control">
+        @foreach (var user in AppData.UserLogic.GetAll())
+        {
+            if (!Roles.IsUserInRole(user.Username, "admin"))
+            {
+                <option value="@user.Id">@user.Username</option>
+            }
+        }
+    </select>
+    <input type="submit" disabled class="btn btn-primary" name="action" value="Delete" />
+</form>

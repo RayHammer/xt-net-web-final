@@ -74,6 +74,11 @@ namespace Final.BLL
             return dao.Update(id, user);
         }
 
+        public bool Delete(int id)
+        {
+            return dao.Delete(id);
+        }
+
         public static bool Validate(User user, string password)
         {
             var usernameRegex = new Regex(@"[A-Za-z0-9_\-]*");

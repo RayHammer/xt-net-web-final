@@ -49,7 +49,7 @@ namespace Final.DAL
                 using (SqlCommand command = connection.CreateCommand())
                 {
                     command.CommandType = CommandType.Text;
-                    command.CommandText = "DELETE FROM [dbo].[ThreadPosts] WHERE Id = @IId";
+                    command.CommandText = "DELETE FROM [dbo].[ThreadPosts] WHERE Id = @Id";
                     command.Parameters.Add(new SqlParameter("Id", id));
 
                     connection.Open();

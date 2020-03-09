@@ -47,7 +47,7 @@ namespace Final.DAL
                 using (SqlCommand command = connection.CreateCommand())
                 {
                     command.CommandType = CommandType.Text;
-                    command.CommandText = "DELETE FROM [dbo].[Users] WHERE Id = @IId";
+                    command.CommandText = "DELETE FROM [dbo].[Users] WHERE Id = @Id";
                     command.Parameters.Add(new SqlParameter("Id", id));
 
                     connection.Open();
